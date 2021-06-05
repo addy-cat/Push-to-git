@@ -8,7 +8,7 @@ use warnings;
 
 if(scalar(@ARGV) < 1) {
   print scalar(@ARGV);
-  print "usage: enter a file name then a commit message inside double parentheses, separated by a space";
+  print "usage: enter a file name then a commit message inside double parentheses, separated by a space\n";
   exit;
 }
 
