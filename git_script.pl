@@ -6,13 +6,15 @@ use warnings;
 #do a commit with a message typed as a command line argument,
 #and push to a remote repository
 
-if(length(@ARGV) < 2) {
-  print "usage: enter a file name then a commit message, separated by a space";
+if(scalar(@ARGV) < 1) {
+  print scalar(@ARGV);
+  print "usage: enter a file name then a commit message inside double parentheses, separated by a space";
   exit;
 }
 
-my ($prog, $commit_msg) = @ARGV;
+my ($commit_msg) = @ARGV;
 
+#use system to execute commands
 system("git", "add", "*");
 system("git", "commit", "-m", $commit_msg);
 system("git", "push", "origin");
